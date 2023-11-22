@@ -1,0 +1,92 @@
+{
+  "name": "mobula",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "mobula",
+  "sourceRoot": "apps/mobula/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/mobula",
+        "index": "apps/mobula/src/index.html",
+        "browser": "apps/mobula/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/mobula/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/mobula/src/favicon.ico", "apps/mobula/src/assets"],
+        "styles": ["apps/mobula/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/mobula/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/mobula/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "mobula:build:production"
+        },
+        "development": {
+          "buildTarget": "mobula:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mobula:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/mobula/**/*.ts", "apps/mobula/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/mobula/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "mobula:build",
+        "staticFilePath": "dist/apps/mobula/browser"
+      }
+    }
+  }
+}

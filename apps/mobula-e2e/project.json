@@ -1,0 +1,33 @@
+{
+  "name": "mobula-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/mobula-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/mobula-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "mobula:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "mobula:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "mobula:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/mobula-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["mobula"]
+}
