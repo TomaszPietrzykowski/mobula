@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mobula/model": ["libs/shared/model/src/index.ts"]
+      "@mobula/model": ["libs/shared/model/src/index.ts"],
+      "@mobula/ui-components": ["libs/shared/ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
