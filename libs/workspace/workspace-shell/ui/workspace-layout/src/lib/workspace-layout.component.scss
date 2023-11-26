@@ -1,9 +1,14 @@
+:host {
+  height: 100%;
+}
 .workspace-layout__container {
   display: grid;
   grid-template-columns: 80px 300px 1fr;
+  grid-template-rows: 90vh;
   border: 1px solid lightblue;
   width: 100%;
   padding: 0.5rem;
+  border: 2px solid magenta;
 }
 .workspace-layout__sidenav,
 .workspace-layout__folder_browser,
