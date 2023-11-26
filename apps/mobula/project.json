@@ -7,23 +7,18 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/mobula",
         "index": "apps/mobula/src/index.html",
-        "browser": "apps/mobula/src/main.ts",
+        "main": "apps/mobula/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/mobula/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/mobula/src/favicon.ico", "apps/mobula/src/assets"],
         "styles": ["apps/mobula/src/styles.scss"],
-        "scripts": [],
-        "server": "apps/mobula/src/main.server.ts",
-        "prerender": true,
-        "ssr": {
-          "entry": "apps/mobula/server.ts"
-        }
+        "scripts": []
       },
       "configurations": {
         "production": {
@@ -42,9 +37,12 @@
           "outputHashing": "all"
         },
         "development": {
+          "buildOptimizer": false,
           "optimization": false,
+          "vendorChunk": true,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "namedChunks": true
         }
       },
       "defaultConfiguration": "production"
@@ -84,8 +82,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "mobula:build",
-        "staticFilePath": "dist/apps/mobula/browser"
+        "buildTarget": "mobula:build"
       }
     }
   }

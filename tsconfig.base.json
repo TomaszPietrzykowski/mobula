@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mobula/home": ["libs/home/feature/src/index.ts"],
+      "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
+      "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
+      "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
