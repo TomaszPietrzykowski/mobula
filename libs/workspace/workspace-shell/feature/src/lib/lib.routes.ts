@@ -5,11 +5,12 @@ export const workspaceShellRoutes: Route[] = [
   {
     path: '',
     component: WorkspaceLayoutComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     loadChildren: async () => (await import('@mobula/home')).HomeModule,
-    //   },
-    // ],
+    children: [
+      {
+        path: '',
+        loadChildren: async () =>
+          (await import('@mobula/desktop')).DesktopModule,
+      },
+    ],
   },
 ];

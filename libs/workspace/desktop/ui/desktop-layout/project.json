@@ -1,0 +1,27 @@
+{
+  "name": "desktop-layout",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/workspace/desktop/ui/desktop-layout/src",
+  "prefix": "mobula",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/workspace/desktop/ui/desktop-layout/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/workspace/desktop/ui/desktop-layout/**/*.ts",
+          "libs/workspace/desktop/ui/desktop-layout/**/*.html"
+        ]
+      }
+    }
+  }
+}

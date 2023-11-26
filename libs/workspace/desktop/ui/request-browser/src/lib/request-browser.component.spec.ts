@@ -1,17 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ContactComponent } from './contact.component';
-import { ContactModule } from './contact.module';
+import { RequestBrowserComponent } from './request-browser.component';
 
-describe('ContactComponent', () => {
-  let component: ContactComponent;
-  let fixture: ComponentFixture<ContactComponent>;
+describe('RequestBrowserComponent', () => {
+  let component: RequestBrowserComponent;
+  let fixture: ComponentFixture<RequestBrowserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactModule],
+      imports: [RequestBrowserComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ContactComponent);
+    fixture = TestBed.createComponent(RequestBrowserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

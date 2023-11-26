@@ -16,10 +16,20 @@
     "baseUrl": ".",
     "paths": {
       "@mobula/contact": ["libs/contact/feature/src/index.ts"],
+      "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
+      "@mobula/desktop-layout": [
+        "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
+      ],
       "@mobula/home": ["libs/home/feature/src/index.ts"],
       "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
       "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
       "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
+      "@mobula/request-browser": [
+        "libs/workspace/desktop/ui/request-browser/src/index.ts"
+      ],
+      "@mobula/response-browser": [
+        "libs/workspace/desktop/ui/response-browser/src/index.ts"
+      ],
       "@mobula/workspace-layout": [
         "libs/workspace/workspace-shell/ui/workspace-layout/src/index.ts"
       ],
