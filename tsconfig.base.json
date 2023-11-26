@@ -18,7 +18,16 @@
       "@mobula/home": ["libs/home/feature/src/index.ts"],
       "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
       "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
-      "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"]
+      "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
+      "@mobula/workspace-layout": [
+        "libs/workspace/workspace-shell/ui/workspace-layout/src/index.ts"
+      ],
+      "@mobula/workspace-output": [
+        "libs/workspace/workspace-shell/ui/workspace-output/src/index.ts"
+      ],
+      "@mobula/workspace-shell": [
+        "libs/workspace/workspace-shell/feature/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

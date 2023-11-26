@@ -10,6 +10,11 @@ export const appShellRoutes: Route[] = [
         path: '',
         loadChildren: async () => (await import('@mobula/home')).HomeModule,
       },
+      {
+        path: 'workspace',
+        loadChildren: async () =>
+          (await import('@mobula/workspace-shell')).WorkspaceShellModule,
+      },
     ],
   },
 ];
