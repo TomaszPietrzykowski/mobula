@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MainViewComponent } from './main-view.component';
+import { MainViewModule } from './main-view.module';
 
 describe('MainViewComponent', () => {
   let component: MainViewComponent;
@@ -7,7 +8,7 @@ describe('MainViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainViewComponent],
+      imports: [MainViewModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MainViewComponent);
