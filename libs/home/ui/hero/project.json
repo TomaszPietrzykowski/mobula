@@ -1,0 +1,27 @@
+{
+  "name": "hero",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/home/ui/hero/src",
+  "prefix": "mobula",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/home/ui/hero/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/home/ui/hero/**/*.ts",
+          "libs/home/ui/hero/**/*.html"
+        ]
+      }
+    }
+  }
+}

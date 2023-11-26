@@ -20,6 +20,8 @@
       "@mobula/desktop-layout": [
         "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
       ],
+      "@mobula/featured": ["libs/home/ui/featured/src/index.ts"],
+      "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
       "@mobula/home": ["libs/home/feature/src/index.ts"],
       "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
       "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],

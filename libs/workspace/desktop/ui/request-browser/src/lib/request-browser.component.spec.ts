@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RequestBrowserComponent } from './request-browser.component';
+import { RequestBrowserModule } from './request-browser.module';
 
 describe('RequestBrowserComponent', () => {
   let component: RequestBrowserComponent;
@@ -7,7 +8,7 @@ describe('RequestBrowserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RequestBrowserComponent],
+      imports: [RequestBrowserModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RequestBrowserComponent);
