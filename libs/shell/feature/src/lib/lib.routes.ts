@@ -15,6 +15,15 @@ export const appShellRoutes: Route[] = [
         loadChildren: async () =>
           (await import('@mobula/workspace-shell')).WorkspaceShellModule,
       },
+      {
+        path: 'contact',
+        loadChildren: async () =>
+          (await import('@mobula/contact')).ContactModule,
+      },
+      {
+        path: '**',
+        redirectTo: '',
+      },
     ],
   },
 ];
