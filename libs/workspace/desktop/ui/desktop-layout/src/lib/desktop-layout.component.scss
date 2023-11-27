@@ -3,15 +3,14 @@
   flex-direction: column;
   border: 1px solid lightgray;
   padding: 0.5rem;
-  //   height: 100vh;
+  height: 100%;
 }
 .desktop_layout__top,
 .desktop_layout__bottom {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 50%;
   border: 1px solid lightgray;
 }
