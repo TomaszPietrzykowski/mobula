@@ -26,8 +26,11 @@
       "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
       "@mobula/home": ["libs/home/feature/src/index.ts"],
       "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
+      "@mobula/login": ["libs/user/login/feature/src/index.ts"],
       "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
       "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
+      "@mobula/profile": ["libs/user/profile/feature/src/index.ts"],
+      "@mobula/register": ["libs/user/register/feature/src/index.ts"],
       "@mobula/request-browser": [
         "libs/workspace/desktop/ui/request-browser/src/index.ts"
       ],
