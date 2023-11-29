@@ -1,0 +1,27 @@
+{
+  "name": "global-error-handler",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/data-access/global-error-handler/src",
+  "prefix": "mobula",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/data-access/global-error-handler/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/data-access/global-error-handler/**/*.ts",
+          "libs/shared/data-access/global-error-handler/**/*.html"
+        ]
+      }
+    }
+  }
+}

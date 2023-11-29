@@ -22,15 +22,20 @@
       ],
       "@mobula/featured": ["libs/home/ui/featured/src/index.ts"],
       "@mobula/footer": ["libs/shell/ui/footer/src/index.ts"],
+      "@mobula/global-error-handler": [
+        "libs/shared/data-access/global-error-handler/src/index.ts"
+      ],
       "@mobula/header": ["libs/shell/ui/header/src/index.ts"],
       "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
       "@mobula/home": ["libs/home/feature/src/index.ts"],
       "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
-      "@mobula/login": ["libs/user/login/feature/src/index.ts"],
+      "@mobula/login": ["libs/user/feature/login/src/index.ts"],
+      "@mobula/login-form": ["libs/user/ui/login-form/src/index.ts"],
       "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
       "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
-      "@mobula/profile": ["libs/user/profile/feature/src/index.ts"],
-      "@mobula/register": ["libs/user/register/feature/src/index.ts"],
+      "@mobula/profile": ["libs/user/feature/profile/src/index.ts"],
+      "@mobula/register": ["libs/user/feature/register/src/index.ts"],
+      "@mobula/register-form": ["libs/user/ui/register-form/src/index.ts"],
       "@mobula/request-browser": [
         "libs/workspace/desktop/ui/request-browser/src/index.ts"
       ],
