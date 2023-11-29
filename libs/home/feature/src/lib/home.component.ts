@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  throwError() {
+    throw new Error('Custom test error kaboom!');
+  }
+}
