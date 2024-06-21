@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainViewModule } from '@mobula/main-view';
 import { LayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
-import { FooterComponent, FooterModule } from '@mobula/footer';
+import { FooterModule } from '@mobula/footer';
 import { HeaderModule } from '@mobula/header';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { HeaderModule } from '@mobula/header';
         FooterModule,
         HeaderModule,
     ],
-    declarations: [LayoutComponent, FooterComponent],
+    declarations: [LayoutComponent],
     exports: [LayoutComponent],
 })
 export class LayoutModule {}
