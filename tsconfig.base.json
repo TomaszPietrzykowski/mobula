@@ -1,57 +1,60 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@mobula/contact": ["libs/contact/feature/src/index.ts"],
-      "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
-      "@mobula/desktop-layout": [
-        "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
-      ],
-      "@mobula/featured": ["libs/home/ui/featured/src/index.ts"],
-      "@mobula/footer": ["libs/shell/ui/footer/src/index.ts"],
-      "@mobula/global-error-handler": [
-        "libs/shared/data-access/global-error-handler/src/index.ts"
-      ],
-      "@mobula/header": ["libs/shell/ui/header/src/index.ts"],
-      "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
-      "@mobula/home": ["libs/home/feature/src/index.ts"],
-      "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
-      "@mobula/login": ["libs/user/feature/login/src/index.ts"],
-      "@mobula/login-form": ["libs/user/ui/login-form/src/index.ts"],
-      "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
-      "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
-      "@mobula/profile": ["libs/user/feature/profile/src/index.ts"],
-      "@mobula/register": ["libs/user/feature/register/src/index.ts"],
-      "@mobula/register-form": ["libs/user/ui/register-form/src/index.ts"],
-      "@mobula/request-browser": [
-        "libs/workspace/desktop/ui/request-browser/src/index.ts"
-      ],
-      "@mobula/response-browser": [
-        "libs/workspace/desktop/ui/response-browser/src/index.ts"
-      ],
-      "@mobula/workspace-layout": [
-        "libs/workspace/workspace-shell/ui/workspace-layout/src/index.ts"
-      ],
-      "@mobula/workspace-output": [
-        "libs/workspace/workspace-shell/ui/workspace-output/src/index.ts"
-      ],
-      "@mobula/workspace-shell": [
-        "libs/workspace/workspace-shell/feature/src/index.ts"
-      ]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "lib": ["es2020", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@mobula/contact": ["libs/contact/feature/src/index.ts"],
+            "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
+            "@mobula/desktop-layout": [
+                "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
+            ],
+            "@mobula/featured": ["libs/home/ui/featured/src/index.ts"],
+            "@mobula/footer": ["libs/shell/ui/footer/src/index.ts"],
+            "@mobula/global-error-handler": [
+                "libs/shared/data-access/global-error-handler/src/index.ts"
+            ],
+            "@mobula/header": ["libs/shell/ui/header/src/index.ts"],
+            "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
+            "@mobula/home": ["libs/home/feature/src/index.ts"],
+            "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
+            "@mobula/login": ["libs/user/feature/login/src/index.ts"],
+            "@mobula/login-form": ["libs/user/ui/login-form/src/index.ts"],
+            "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
+            "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
+            "@mobula/profile": ["libs/user/feature/profile/src/index.ts"],
+            "@mobula/register": ["libs/user/feature/register/src/index.ts"],
+            "@mobula/register-form": [
+                "libs/user/ui/register-form/src/index.ts"
+            ],
+            "@mobula/request-browser": [
+                "libs/workspace/desktop/ui/request-browser/src/index.ts"
+            ],
+            "@mobula/response-browser": [
+                "libs/workspace/desktop/ui/response-browser/src/index.ts"
+            ],
+            "@mobula/styles": ["libs/shared/ui/styles/src/index.ts"],
+            "@mobula/workspace-layout": [
+                "libs/workspace/workspace-shell/ui/workspace-layout/src/index.ts"
+            ],
+            "@mobula/workspace-output": [
+                "libs/workspace/workspace-shell/ui/workspace-output/src/index.ts"
+            ],
+            "@mobula/workspace-shell": [
+                "libs/workspace/workspace-shell/feature/src/index.ts"
+            ]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

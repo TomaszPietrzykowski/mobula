@@ -1,0 +1,8 @@
+@import '../../../../shared/ui/styles/src/assets/colors.scss';
+// TODO fix the import
+
+p {
+    color: red;
+    color: $color-red;
+    font-size: $bigf;
+}
