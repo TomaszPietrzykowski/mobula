@@ -1,10 +1,37 @@
 :host {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo--container {
+    padding-inline: 2rem;
+}
+.header__nav--container {
+    padding-inline: 2rem;
+}
+.header__flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.header__nav-link--active {
+    button {
+        color: red;
+    }
 }

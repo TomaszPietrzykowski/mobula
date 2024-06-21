@@ -4,17 +4,17 @@ import { MainViewModule } from '@mobula/main-view';
 import { LayoutComponent } from './layout.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent, FooterModule } from '@mobula/footer';
-import { HeaderModule, HeaderComponent } from '@mobula/header';
+import { HeaderModule } from '@mobula/header';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MainViewModule,
-    RouterModule,
-    FooterModule,
-    HeaderModule,
-  ],
-  declarations: [LayoutComponent, FooterComponent, HeaderComponent],
-  exports: [LayoutComponent],
+    imports: [
+        CommonModule,
+        MainViewModule,
+        RouterModule,
+        FooterModule,
+        HeaderModule,
+    ],
+    declarations: [LayoutComponent, FooterComponent],
+    exports: [LayoutComponent],
 })
 export class LayoutModule {}

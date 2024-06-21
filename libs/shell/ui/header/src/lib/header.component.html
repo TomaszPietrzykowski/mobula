@@ -1,1 +1,15 @@
-<h2>header</h2>
+<div class="header__flex-container">
+    <div class="header__logo--container">
+        <h2>mobula</h2>
+    </div>
+    <div class="header__nav--container">
+        <nav class="header__nav">
+            <a routerLink="/" routerLinkActive="header__nav-link--active"
+                [routerLinkActiveOptions]="{exact:true}"><button>Home</button></a>
+            <a routerLink="/workspace" routerLinkActive="header__nav-link--active"
+                [routerLinkActiveOptions]="{exact:true}"><button>Workspace</button></a>
+            <a routerLink="/contact" routerLinkActive="header__nav-link--active"
+                [routerLinkActiveOptions]="{exact:true}"><button>Contact</button></a>
+        </nav>
+    </div>
+</div>
