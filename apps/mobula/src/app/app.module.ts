@@ -7,6 +7,7 @@ import {
     GlobalErrorHandlerModule,
 } from '@mobula/global-error-handler';
 import { RouterModule } from '@angular/router';
+import { LayoutModule } from '@mobula/layout';
 
 @NgModule({
     declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
         BrowserModule,
         RouterModule,
         MobulaShellModule,
+        LayoutModule,
         GlobalErrorHandlerModule,
     ],
     providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],
