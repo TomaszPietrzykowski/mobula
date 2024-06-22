@@ -1,8 +1,11 @@
-@import '../../../../shared/ui/styles/src/assets/colors.scss';
-// TODO fix the import
+@import 'colors';
+@import 'elements';
+@import 'mixins';
 
 p {
-    color: red;
     color: $color-red;
     font-size: $bigf;
+}
+.test {
+    @include flex-center;
 }

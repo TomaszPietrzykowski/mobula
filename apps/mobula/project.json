@@ -21,6 +21,9 @@
                     "apps/mobula/src/assets"
                 ],
                 "styles": ["apps/mobula/src/styles.scss"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/shared/ui/styles/src/assets"]
+                },
                 "scripts": []
             },
             "configurations": {
