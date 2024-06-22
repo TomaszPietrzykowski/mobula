@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "test": "nx run-many -t test --all"
+        "test": "nx run-many -t test --all",
+        "dev": "concurrently --prefix \"none\" \"nx serve\" \"nx serve api\""
     },
     "private": true,
     "dependencies": {
@@ -57,6 +58,7 @@
         "@typescript-eslint/eslint-plugin": "7.3.0",
         "@typescript-eslint/parser": "7.3.0",
         "@typescript-eslint/utils": "^8.0.0-alpha.28",
+        "concurrently": "^8.2.2",
         "cypress": "13.8.0",
         "eslint": "8.57.0",
         "eslint-config-prettier": "^9.0.0",
