@@ -63,6 +63,9 @@
                     "buildTarget": "mobula:build:development"
                 }
             },
+            "options": {
+                "proxyConfig": "apps/mobula/proxy.conf.json"
+            },
             "defaultConfiguration": "development"
         },
         "extract-i18n": {

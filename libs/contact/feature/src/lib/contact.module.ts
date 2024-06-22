@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContactComponent } from './contact.component';
 import { StylesModule } from '@mobula/styles';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     imports: [
@@ -14,6 +15,7 @@ import { StylesModule } from '@mobula/styles';
             },
         ]),
         StylesModule,
+        HttpClientModule,
     ],
 })
 export class ContactModule {}

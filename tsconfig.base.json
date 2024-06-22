@@ -16,6 +16,7 @@
         "baseUrl": ".",
         "paths": {
             "@mobula/contact": ["libs/contact/feature/src/index.ts"],
+            "@mobula/controller": ["libs/api/controller/src/index.ts"],
             "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
             "@mobula/desktop-layout": [
                 "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
@@ -32,6 +33,7 @@
             "@mobula/login": ["libs/user/feature/login/src/index.ts"],
             "@mobula/login-form": ["libs/user/ui/login-form/src/index.ts"],
             "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
+            "@mobula/middleware": ["libs/api/middleware/src/index.ts"],
             "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
             "@mobula/profile": ["libs/user/feature/profile/src/index.ts"],
             "@mobula/register": ["libs/user/feature/register/src/index.ts"],
@@ -44,6 +46,7 @@
             "@mobula/response-browser": [
                 "libs/workspace/desktop/ui/response-browser/src/index.ts"
             ],
+            "@mobula/router": ["libs/api/router/src/index.ts"],
             "@mobula/styles": ["libs/shared/ui/styles/src/index.ts"],
             "@mobula/workspace-layout": [
                 "libs/workspace/workspace-shell/ui/workspace-layout/src/index.ts"
