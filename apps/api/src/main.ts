@@ -9,12 +9,12 @@ const app = express();
 
 app.use('*', corsMiddleware);
 app.use('*', authMiddleware);
-app.use('*', httpLogger);
+app.use('*', httpLogger('compact'));
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.use('/api', authRouter);
-app.use('/email', emailRouter);
+app.use('/api/email', emailRouter);
+app.use('/api/auth', authRouter);
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
