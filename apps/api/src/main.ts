@@ -1,20 +1,20 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import express from 'express';
 import * as path from 'path';
 import 'dotenv/config';
 
+import { authRouter, emailRouter } from '@mobula/router';
+import { corsMiddleware, authMiddleware, httpLogger } from '@mobula/middleware';
+
 const app = express();
-console.log(process.env);
+
+app.use('*', corsMiddleware);
+app.use('*', authMiddleware);
+app.use('*', httpLogger);
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.get('/api', (req, res) => {
-    res.send({ message: 'Welcome to api!' });
-});
+app.use('/api', authRouter);
+app.use('/email', emailRouter);
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
