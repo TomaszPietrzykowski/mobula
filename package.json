@@ -4,7 +4,9 @@
     "license": "MIT",
     "scripts": {
         "test": "nx run-many -t test --all",
-        "dev": "concurrently --prefix \"none\" \"nx serve\" \"nx serve api\""
+        "dev": "concurrently --prefix \"none\" \"nx serve\" \"nx serve api\"",
+        "build": "concurrently --prefix \"none\" \"nx build mobula\" \"nx build api\"",
+        "postbuild": "node postbuild.js"
     },
     "private": true,
     "dependencies": {
