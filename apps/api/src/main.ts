@@ -13,10 +13,14 @@ app.use('*', authMiddleware);
 app.use('*', httpLogger(LogLevel.Compact));
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-
 app.use('/api/email', emailRouter);
 app.use('/api/auth', authRouter);
 
+app.use(express.static(path.join(__dirname, '/view')));
+app.get('*', (_, res) =>
+    res.sendFile(path.resolve(__dirname, 'view', 'index.html'))
+);
+// const server = app.listen();
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}/api`);
