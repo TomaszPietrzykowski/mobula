@@ -5,6 +5,7 @@
     "scripts": {
         "test": "nx run-many -t test --all",
         "dev": "concurrently --prefix \"none\" \"nx serve\" \"nx serve api\"",
+        "prebuild": "node prebuild.js",
         "build": "concurrently --prefix \"none\" \"nx build mobula\" \"nx build api\"",
         "postbuild": "node postbuild.js"
     },
