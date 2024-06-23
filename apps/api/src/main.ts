@@ -8,6 +8,8 @@ import { LogLevel } from '@mobula/model';
 
 const app = express();
 
+console.log(process.env.MY_DEVIL);
+
 app.use('*', corsMiddleware);
 app.use('*', authMiddleware);
 app.use('*', httpLogger(LogLevel.Compact));
