@@ -36,6 +36,7 @@
             "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
             "@mobula/middleware": ["libs/api/middleware/src/index.ts"],
             "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
+            "@mobula/model": ["libs/shared/data-access/model/src/index.ts"],
             "@mobula/profile": ["libs/user/feature/profile/src/index.ts"],
             "@mobula/register": ["libs/user/feature/register/src/index.ts"],
             "@mobula/register-form": [

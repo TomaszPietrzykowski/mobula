@@ -4,12 +4,13 @@ import 'dotenv/config';
 
 import { authRouter, emailRouter } from '@mobula/router';
 import { corsMiddleware, authMiddleware, httpLogger } from '@mobula/middleware';
+import { LogLevel } from '@mobula/model';
 
 const app = express();
 
 app.use('*', corsMiddleware);
 app.use('*', authMiddleware);
-app.use('*', httpLogger('compact'));
+app.use('*', httpLogger(LogLevel.Compact));
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 

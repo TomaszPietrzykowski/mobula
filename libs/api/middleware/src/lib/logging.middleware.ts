@@ -1,6 +1,7 @@
+import { LogLevel } from '@mobula/model';
 import { Request, Response, NextFunction } from 'express';
 
-export const httpLogger = (logLevel = 'compact') => {
+export const httpLogger = (logLevel: LogLevel = LogLevel.Compact) => {
     return (req: Request, res: Response, next: NextFunction) => {
         console.log(
             `\x1b[38;5;83m***   Request method: ${req.method}\n
@@ -10,7 +11,7 @@ export const httpLogger = (logLevel = 'compact') => {
     \x1b[38;5;33m***   User agent: ${req.headers['user-agent']} \n
     \x1b[38;5;98m***   Happy hacking!!!\x1b[0m`
         );
-        if (logLevel == 'verbose') {
+        if (logLevel == LogLevel.Verbose) {
             console.log(
                 `\n\x1b[38;5;222m#################################################\n
                 \x1b[48;5;83m\n\n
