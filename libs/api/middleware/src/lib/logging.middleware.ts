@@ -3,14 +3,17 @@ import { Request, Response, NextFunction } from 'express';
 
 export const httpLogger = (logLevel: LogLevel = LogLevel.Compact) => {
     return (req: Request, res: Response, next: NextFunction) => {
-        console.log(
-            `\x1b[38;5;83m***   Request method: ${req.method}\n
-    \x1b[38;5;87m***   Endpoint: ${req.baseUrl}\n
-    \x1b[38;5;87m***   Url: ${req.url}\n
-    \x1b[38;5;75m***   Response status: ${res.statusCode}\n
-    \x1b[38;5;33m***   User agent: ${req.headers['user-agent']} \n
-    \x1b[38;5;98m***   Happy hacking!!!\x1b[0m`
-        );
+        if (logLevel == LogLevel.Compact) {
+            console.log(' ');
+            console.log(
+                `\x1b[38;5;83m HTTP \x1b[38;5;0m\x1b[48;5;83m ${req.method} \x1b[48;5;234m\x1b[38;5;83m ${req.baseUrl}   status: ${res.statusCode}\n`
+            );
+        }
+        if (logLevel == LogLevel.Extended) {
+            console.log(
+                `\x1b[38;5;83m***   Request method: ${req.method}\n\x1b[38;5;87m***   Endpoint: ${req.baseUrl}\n\x1b[38;5;87m***   Url: ${req.url}\n\x1b[38;5;75m***   Response status: ${res.statusCode}\n\x1b[38;5;33m***   User agent: ${req.headers['user-agent']} \n\x1b[38;5;98m***   Happy hacking!!!\x1b[0m`
+            );
+        }
         if (logLevel == LogLevel.Verbose) {
             console.log(
                 `\n\x1b[38;5;222m#################################################\n
