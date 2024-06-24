@@ -8,8 +8,6 @@ import { LogLevel } from '@mobula/model';
 
 const app = express();
 
-console.log(process.env.MY_DEVIL);
-
 app.use('*', corsMiddleware);
 app.use('*', authMiddleware);
 app.use('*', httpLogger(LogLevel.Compact));
@@ -22,9 +20,9 @@ app.use(express.static(path.join(__dirname, '/view')));
 app.get('*', (_, res) =>
     res.sendFile(path.resolve(__dirname, 'view', 'index.html'))
 );
-// const server = app.listen();
-const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}/api`);
-});
+const server = app.listen();
+// const port = process.env.PORT || 3333;
+// const server = app.listen(port, () => {
+//     console.log(`Listening at http://localhost:${port}/api`);
+// });
 server.on('error', console.error);

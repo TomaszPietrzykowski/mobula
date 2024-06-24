@@ -8,7 +8,7 @@
         "prebuild": "node prebuild.js",
         "build": "concurrently --prefix \"none\" \"nx build mobula\" \"nx build api\"",
         "postbuild": "node postbuild.js",
-        "deploy": "npm run build && node mydevil.pipeline.js"
+        "mydevil": "npm run build && node mydevil.pipeline.js"
     },
     "private": true,
     "dependencies": {

@@ -1,5 +1,5 @@
 const fs = require('fs');
-console.log('\x1b[38;5;87mRunning post-build script.\x1b[0m');
+console.log('\x1b[38;5;87mRunning post-build script.\n\x1b[0m');
 // Define paths
 const nxBuild = `dist/apps`;
 const backendBuildDir = `${nxBuild}/api`;
@@ -37,9 +37,9 @@ try {
     });
     fs.rmSync('dist/temp', { recursive: true });
 
-    console.log(
-        '\x1b[38;5;83mPost-build success. Copy content of \x1b[38;5;214mdist\x1b[38;5;83m folder directly to the server.\n\x1b[0m'
-    );
+    fs.copyFileSync('apps/api/.env', 'dist/.env');
+
+    console.log('\x1b[38;5;87mPost-build success.\n\x1b[0m');
 } catch (err) {
     console.error('Error during post-build:', err);
     process.exit(1);

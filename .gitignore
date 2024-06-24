@@ -7,7 +7,7 @@ tmp
 
 # env
 .env
-mydevil.pipeline.js
+mydevil.config.js
 
 # dependencies
 node_modules

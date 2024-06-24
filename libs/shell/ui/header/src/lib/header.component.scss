@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: orangered;
 }
 
 .header__logo--container {
@@ -32,6 +33,6 @@
 }
 .header__nav-link--active {
     button {
-        color: red;
+        color: greenyellow;
     }
 }
