@@ -7,7 +7,8 @@
         "dev": "concurrently --prefix \"none\" \"nx serve\" \"nx serve api\"",
         "prebuild": "node prebuild.js",
         "build": "concurrently --prefix \"none\" \"nx build mobula\" \"nx build api\"",
-        "postbuild": "node postbuild.js"
+        "postbuild": "node postbuild.js",
+        "mydevil": "npm run build && node mydevil.pipeline.js"
     },
     "private": true,
     "dependencies": {
@@ -26,6 +27,7 @@
         "dotenv": "^16.4.5",
         "express": "^4.19.2",
         "rxjs": "~7.8.0",
+        "ssh2": "^1.15.0",
         "tslib": "^2.3.0",
         "zone.js": "0.14.7"
     },
