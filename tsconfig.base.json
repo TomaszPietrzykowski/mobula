@@ -22,6 +22,9 @@
             "@mobula/desktop-layout": [
                 "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
             ],
+            "@mobula/environment": [
+                "libs/shared/data-access/environment/src/index.ts"
+            ],
             "@mobula/featured": ["libs/home/ui/featured/src/index.ts"],
             "@mobula/footer": ["libs/shell/ui/footer/src/index.ts"],
             "@mobula/global-error-handler": [

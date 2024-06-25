@@ -8,6 +8,8 @@ import {
 } from '@mobula/global-error-handler';
 import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@mobula/layout';
+import { MOBULA_ENV } from '@mobula/environment';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [AppComponent],
@@ -18,7 +20,10 @@ import { LayoutModule } from '@mobula/layout';
         LayoutModule,
         GlobalErrorHandlerModule,
     ],
-    providers: [{ provide: ErrorHandler, useClass: GlobalErrorHandler }],
+    providers: [
+        { provide: ErrorHandler, useClass: GlobalErrorHandler },
+        { provide: MOBULA_ENV, useValue: environment },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

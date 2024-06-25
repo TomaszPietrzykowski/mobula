@@ -20,9 +20,9 @@ app.use(express.static(path.join(__dirname, '/view')));
 app.get('*', (_, res) =>
     res.sendFile(path.resolve(__dirname, 'view', 'index.html'))
 );
-const server = app.listen();
-// const port = process.env.PORT || 3333;
-// const server = app.listen(port, () => {
-//     console.log(`Listening at http://localhost:${port}/api`);
-// });
+
+const port = process.env.PORT || 5001;
+const server = app.listen(port, () => {
+    console.log(`Listening at http://localhost:${port}/api`);
+});
 server.on('error', console.error);

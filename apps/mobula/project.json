@@ -40,6 +40,12 @@
                             "maximumError": "4kb"
                         }
                     ],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/mobula/src/environments/environment.ts",
+                            "with": "apps/mobula/src/environments/environment.production.ts"
+                        }
+                    ],
                     "outputHashing": "all"
                 },
                 "development": {
@@ -48,7 +54,13 @@
                     "vendorChunk": true,
                     "extractLicenses": false,
                     "sourceMap": true,
-                    "namedChunks": true
+                    "namedChunks": true,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/mobula/src/environments/environment.ts",
+                            "with": "apps/mobula/src/environments/environment.development.ts"
+                        }
+                    ]
                 }
             },
             "defaultConfiguration": "production"
