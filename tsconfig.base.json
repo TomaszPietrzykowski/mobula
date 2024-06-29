@@ -16,6 +16,7 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@mobula/auth/data-access": ["libs/auth/data-access/src/index.ts"],
             "@mobula/contact": ["libs/contact/feature/src/index.ts"],
             "@mobula/controller": ["libs/api/controller/src/index.ts"],
             "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
@@ -34,10 +35,12 @@
             "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
             "@mobula/home": ["libs/home/feature/src/index.ts"],
             "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
+            "@mobula/login": ["libs/auth/feature/login/src/index.ts"],
             "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
             "@mobula/middleware": ["libs/api/middleware/src/index.ts"],
             "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
             "@mobula/model": ["libs/shared/data-access/model/src/index.ts"],
+            "@mobula/register": ["libs/auth/feature/register/src/index.ts"],
             "@mobula/request-browser": [
                 "libs/workspace/desktop/ui/request-browser/src/index.ts"
             ],
