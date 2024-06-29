@@ -12,17 +12,20 @@ app.use('*', corsMiddleware);
 app.use('*', authMiddleware);
 app.use('*', httpLogger(LogLevel.Compact));
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use('/api/email', emailRouter);
 app.use('/api/auth', authRouter);
 
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(express.static(path.join(__dirname, '/view')));
+
 app.get('*', (_, res) =>
     res.sendFile(path.resolve(__dirname, 'view', 'index.html'))
 );
 
 const port = process.env.PORT || 5001;
 const server = app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}/api`);
+    console.log(
+        `\x1b[38;5;83mServer listening at \x1b[38;5;214mlocalhost:${port}/api\n\x1b[38;5;83mHappy hacking!!!\n\x1b[0m`
+    );
 });
 server.on('error', console.error);

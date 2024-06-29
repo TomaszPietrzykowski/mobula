@@ -34,17 +34,10 @@
             "@mobula/hero": ["libs/home/ui/hero/src/index.ts"],
             "@mobula/home": ["libs/home/feature/src/index.ts"],
             "@mobula/layout": ["libs/shell/ui/layout/src/index.ts"],
-            "@mobula/login": ["libs/user/feature/login/src/index.ts"],
-            "@mobula/login-form": ["libs/user/ui/login-form/src/index.ts"],
             "@mobula/main-view": ["libs/shell/ui/main-view/src/index.ts"],
             "@mobula/middleware": ["libs/api/middleware/src/index.ts"],
             "@mobula/mobula-shell": ["libs/shell/feature/src/index.ts"],
             "@mobula/model": ["libs/shared/data-access/model/src/index.ts"],
-            "@mobula/profile": ["libs/user/feature/profile/src/index.ts"],
-            "@mobula/register": ["libs/user/feature/register/src/index.ts"],
-            "@mobula/register-form": [
-                "libs/user/ui/register-form/src/index.ts"
-            ],
             "@mobula/request-browser": [
                 "libs/workspace/desktop/ui/request-browser/src/index.ts"
             ],
