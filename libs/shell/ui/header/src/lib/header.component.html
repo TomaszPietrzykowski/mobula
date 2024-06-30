@@ -10,10 +10,24 @@
                 [routerLinkActiveOptions]="{exact:true}"><button>Workspace</button></a>
             <a routerLink="/contact" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Contact</button></a>
+
+            @if(!authService.userSignal()?.username) {
+            <button>Guest</button>
+            }
+            @if(authService.userSignal()?.username) {
+            <button>{{ authService.userSignal()?.username }}</button>
+            }
+            @if(!authService.userSignal()?.username) {
             <a routerLink="/login" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Login</button></a>
             <a routerLink="/register" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Register</button></a>
+            }
+            @if(authService.userSignal()?.username) {
+            <a routerLink="/profile" routerLinkActive="header__nav-link--active"
+                [routerLinkActiveOptions]="{exact:true}"><button>Profile</button></a>
+            <button (click)="authService.logout()">Logout</button>
+            }
         </nav>
     </div>
 </div>

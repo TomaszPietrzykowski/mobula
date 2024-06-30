@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { AuthGuard } from '@mobula/auth/data-access';
 import { LayoutComponent } from '@mobula/layout';
 
 export const appShellRoutes: Route[] = [
@@ -32,6 +33,12 @@ export const appShellRoutes: Route[] = [
                 path: 'register',
                 loadComponent: async () =>
                     (await import('@mobula/register')).RegisterComponent,
+            },
+            {
+                path: 'profile',
+                canActivate: [AuthGuard],
+                loadComponent: async () =>
+                    (await import('@mobula/user/profile')).UserProfileComponent,
             },
             {
                 path: '**',
