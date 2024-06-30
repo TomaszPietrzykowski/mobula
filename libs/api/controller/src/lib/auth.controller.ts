@@ -41,7 +41,24 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
     }
 });
 
-export function login(req: Request, res: Response) {
-    // Logic to create a user
-    res.send('Create user');
-}
+export const login = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (user) {
+        if (await user.matchPassword(password)) {
+            res.json({
+                _id: user._id,
+                username: user.username,
+                email: user.email,
+                isAdmin: user.isAdmin,
+                token: generateToken(user._id as unknown as string),
+            });
+        } else {
+            res.status(401);
+            throw new Error('Unauthorized: invalid login or password');
+        }
+    } else {
+        res.status(404);
+        throw new Error('Invalid user data');
+    }
+});

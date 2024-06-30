@@ -40,26 +40,24 @@ export class AuthService {
     }
 
     login(userData: IUserLogin): void {
-        this.http
-            .post<{ user: IUser }>(this.loginEndpoint, { ...userData })
-            .subscribe({
-                next: (res) => {
-                    if (res.user && res.user.token) {
-                        localStorage.setItem('token', res.user.token);
-                        this.userSignal.set(res.user);
-                        if (this.redirectUrl) {
-                            this.router.navigateByUrl(this.redirectUrl);
-                        } else {
-                            this.router.navigateByUrl('/workspace');
-                            this.redirectUrl = null;
-                        }
+        this.http.post<IUser>(this.loginEndpoint, { ...userData }).subscribe({
+            next: (res) => {
+                if (res && res.token) {
+                    localStorage.setItem('token', res.token);
+                    this.userSignal.set(res);
+                    if (this.redirectUrl) {
+                        this.router.navigateByUrl(this.redirectUrl);
+                    } else {
+                        this.router.navigateByUrl('/workspace');
+                        this.redirectUrl = null;
                     }
-                },
-                error: () => {
-                    this.userSignal.set(null);
-                    localStorage.removeItem('token');
-                },
-            });
+                }
+            },
+            error: () => {
+                this.userSignal.set(null);
+                localStorage.removeItem('token');
+            },
+        });
     }
 
     logout(): void {
