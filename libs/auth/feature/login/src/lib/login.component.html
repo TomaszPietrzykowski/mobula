@@ -1,17 +1,17 @@
-<p>login works!</p>
-<!-- form here  -->
 <div class="login__container">
-    <div class="login__header"></div>
-    <form class="login__form">
-        <div class="login__input">
-            <label for="username"></label>
-            <input type="text" name="username" id="username">
-            <div class="login__input--error">{{ usernameError }}</div>
-        </div>
-        <div class="login__input">
+    <div class="login__header">
+        <h2>Login</h2>
+    </div>
+    <form class="auth__form">
+        <div class="auth__input">
             <label for="email"></label>
             <input type="text" name="email" id="email">
-            <div class="login__input--error">{{ emailError }}</div>
+            <div class="auth__input--error">{{ emailError }}</div>
+        </div>
+        <div class="auth__input">
+            <label for="password"></label>
+            <input type="text" name="password" id="password">
+            <div class="auth__input--error">{{ passwordError }}</div>
         </div>
     </form>
 </div>

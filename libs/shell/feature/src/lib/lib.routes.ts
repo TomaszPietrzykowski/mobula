@@ -24,6 +24,16 @@ export const appShellRoutes: Route[] = [
                     (await import('@mobula/contact')).ContactModule,
             },
             {
+                path: 'login',
+                loadComponent: async () =>
+                    (await import('@mobula/login')).LoginComponent,
+            },
+            {
+                path: 'register',
+                loadComponent: async () =>
+                    (await import('@mobula/register')).RegisterComponent,
+            },
+            {
                 path: '**',
                 redirectTo: '',
                 pathMatch: 'full',

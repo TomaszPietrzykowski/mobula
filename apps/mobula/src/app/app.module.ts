@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { LayoutModule } from '@mobula/layout';
 import { MOBULA_ENV } from '@mobula/environment';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { environment } from '../environments/environment';
         MobulaShellModule,
         LayoutModule,
         GlobalErrorHandlerModule,
+        HttpClientModule,
     ],
     providers: [
         { provide: ErrorHandler, useClass: GlobalErrorHandler },

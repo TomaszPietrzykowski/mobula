@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'lib-login',
+    selector: 'login',
     standalone: true,
     imports: [CommonModule, ReactiveFormsModule],
     templateUrl: './login.component.html',
@@ -11,6 +11,9 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 })
 export class LoginComponent {
     fb = inject(FormBuilder);
+
+    emailError: string | null = null;
+    passwordError: string | null = null;
 
     loginForm = this.fb.nonNullable.group({
         email: ['', Validators.required],

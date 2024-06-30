@@ -1,0 +1,14 @@
+@import 'elements';
+@import 'colors';
+@import 'mixins';
+
+.login__container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0 2rem 8rem;
+}
+.login__header {
+    @include auth-header;
+}
