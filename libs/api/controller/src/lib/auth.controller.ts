@@ -1,12 +1,32 @@
 import { Request, Response } from 'express';
 import asyncHandler from 'express-async-handler';
 import { User } from '@mobula/db-model';
-import { generateToken } from '@mobula/utils';
+import { generateToken, decodeToken } from '@mobula/utils';
+import { JwtPayload } from 'jsonwebtoken';
 
-export function getUser(req: Request, res: Response) {
-    // Logic to fetch user details
-    res.send('Get users 1');
-}
+export const getUser = asyncHandler(async (req: Request, res: Response) => {
+    if (!req.headers.authorization?.startsWith('Bearer')) {
+        res.status(401);
+        throw new Error('Unauthorized');
+    } else {
+        const token = req.headers.authorization?.split(' ')[1];
+        const decoded: JwtPayload = decodeToken(token) as JwtPayload;
+        const user = await User.findById(decoded.id).select('-password');
+
+        if (user) {
+            res.json({
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                image: user.image,
+                isAdmin: user.isAdmin,
+            });
+        } else {
+            res.status(404);
+            throw new Error('User not found');
+        }
+    }
+});
 
 export const register = asyncHandler(async (req: Request, res: Response) => {
     console.log('Body: ', req.body);

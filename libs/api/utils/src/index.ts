@@ -1,1 +1,1 @@
-export * from './lib/generate-token';
+export * from './lib/jwt';

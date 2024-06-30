@@ -11,7 +11,7 @@ export const authInterceptor: HttpInterceptorFn = (
     const token = localStorage.getItem('token') ?? '';
     req = req.clone({
         setHeaders: {
-            Authorization: token ? `Token ${token}` : '',
+            Authorization: token ? `Bearer ${token}` : '',
         },
     });
 

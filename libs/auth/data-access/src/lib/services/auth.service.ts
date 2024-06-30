@@ -67,10 +67,9 @@ export class AuthService {
     }
 
     getUser(): void {
-        this.http.get<{ user: IUser }>(this.userEndpoint).subscribe({
+        this.http.get<IUser>(this.userEndpoint).subscribe({
             next: (res) => {
-                localStorage.setItem('token', res.user.token);
-                this.userSignal.set(res.user);
+                this.userSignal.set(res);
                 if (this.redirectUrl) {
                     this.router.navigateByUrl(this.redirectUrl);
                 } else {
@@ -80,7 +79,6 @@ export class AuthService {
             },
             error: () => {
                 this.userSignal.set(null);
-                localStorage.removeItem('token');
             },
         });
     }
