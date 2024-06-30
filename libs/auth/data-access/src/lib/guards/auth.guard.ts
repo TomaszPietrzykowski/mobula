@@ -16,15 +16,12 @@ export class AuthGuard implements CanActivate {
     auth = inject(AuthService);
     router = inject(Router);
     canActivate(
-        route: ActivatedRouteSnapshot,
+        _: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): MaybeAsync<GuardResult> {
-        console.log('State from guard: ', state);
-        if (this.auth.userSignal()?.token && this.auth.userSignal()?.username) {
-            console.log('condition met');
+        if (this.auth.isLoggedIn()) {
             return true;
         } else {
-            console.log('condition not met');
             this.auth.redirectUrl = state.url;
             return this.router.createUrlTree(['login']);
         }

@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,36 +8,24 @@ import { IUser, IUserLogin, IUserRegister } from '@mobula/model';
 export class AuthService {
     http = inject(HttpClient);
     router = inject(Router);
-    // loginEndpoint ='/api/auth/login';
-    // registerEndpoint = '/api/auth/login';
-    // userEndpoint = '/api/auth/user';
-    loginEndpoint = 'https://api.realworld.io/api/users/login';
-    registerEndpoint = 'https://api.realworld.io/api/users';
-    userEndpoint = 'https://api.realworld.io/api/user';
+
+    loginEndpoint = '/api/auth/login';
+    registerEndpoint = '/api/auth/register';
+    userEndpoint = '/api/auth/user';
 
     userSignal = signal<IUser | undefined | null>(undefined);
 
     redirectUrl: string | null = null;
 
-    getUser(): void {
-        this.http.get<{ user: IUser }>(this.userEndpoint).subscribe((res) => {
-            localStorage.setItem('token', res.user.token);
-            this.userSignal.set(res.user);
-            if (this.redirectUrl) {
-                this.router.navigateByUrl(this.redirectUrl);
-            } else {
-                this.router.navigateByUrl('/workspace');
-                this.redirectUrl = null;
-            }
-        });
+    isLoggedIn(): boolean {
+        return this.userSignal() ? true : false;
     }
 
-    login(userData: IUserLogin): void {
+    register(userData: IUserRegister): void {
         this.http
-            .post<{ user: IUser }>(this.loginEndpoint, { user: userData })
-            .subscribe({
-                next: (res) => {
-                    // TODO validate
+            .post<{ user: IUser }>(this.registerEndpoint, { user: userData })
+            .subscribe((res) => {
+                if (res.user && res.user.token) {
                     localStorage.setItem('token', res.user.token);
                     this.userSignal.set(res.user);
                     if (this.redirectUrl) {
@@ -47,9 +34,29 @@ export class AuthService {
                         this.router.navigateByUrl('/workspace');
                         this.redirectUrl = null;
                     }
+                }
+            });
+    }
+
+    login(userData: IUserLogin): void {
+        this.http
+            .post<{ user: IUser }>(this.loginEndpoint, { user: userData })
+            .subscribe({
+                next: (res) => {
+                    if (res.user && res.user.token) {
+                        localStorage.setItem('token', res.user.token);
+                        this.userSignal.set(res.user);
+                        if (this.redirectUrl) {
+                            this.router.navigateByUrl(this.redirectUrl);
+                        } else {
+                            this.router.navigateByUrl('/workspace');
+                            this.redirectUrl = null;
+                        }
+                    }
                 },
                 error: () => {
                     this.userSignal.set(null);
+                    localStorage.removeItem('token');
                 },
             });
     }
@@ -60,11 +67,9 @@ export class AuthService {
         this.router.navigateByUrl('/');
     }
 
-    register(userData: IUserRegister): void {
-        this.http
-            .post<{ user: IUser }>(this.registerEndpoint, { user: userData })
-            .subscribe((res) => {
-                // TODO validate
+    getUser(): void {
+        this.http.get<{ user: IUser }>(this.userEndpoint).subscribe({
+            next: (res) => {
                 localStorage.setItem('token', res.user.token);
                 this.userSignal.set(res.user);
                 if (this.redirectUrl) {
@@ -73,6 +78,11 @@ export class AuthService {
                     this.router.navigateByUrl('/workspace');
                     this.redirectUrl = null;
                 }
-            });
+            },
+            error: () => {
+                this.userSignal.set(null);
+                localStorage.removeItem('token');
+            },
+        });
     }
 }
