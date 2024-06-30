@@ -8,6 +8,7 @@
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "noPropertyAccessFromIndexSignature": false,
         "importHelpers": true,
         "target": "es2015",
         "module": "esnext",
@@ -19,6 +20,8 @@
             "@mobula/auth/data-access": ["libs/auth/data-access/src/index.ts"],
             "@mobula/contact": ["libs/contact/feature/src/index.ts"],
             "@mobula/controller": ["libs/api/controller/src/index.ts"],
+            "@mobula/db": ["libs/api/db/src/index.ts"],
+            "@mobula/db-model": ["libs/api/db-model/src/index.ts"],
             "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
             "@mobula/desktop-layout": [
                 "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
@@ -26,7 +29,6 @@
             "@mobula/environment": [
                 "libs/shared/data-access/environment/src/index.ts"
             ],
-            "@mobula/user/profile": ["libs/user/feature/src/index.ts"],
             "@mobula/featured": ["libs/home/ui/featured/src/index.ts"],
             "@mobula/footer": ["libs/shell/ui/footer/src/index.ts"],
             "@mobula/global-error-handler": [
@@ -50,6 +52,8 @@
             ],
             "@mobula/router": ["libs/api/router/src/index.ts"],
             "@mobula/styles": ["libs/shared/ui/styles/src/index.ts"],
+            "@mobula/user/profile": ["libs/user/feature/src/index.ts"],
+            "@mobula/utils": ["libs/api/utils/src/index.ts"],
             "@mobula/workspace-layout": [
                 "libs/workspace/workspace-shell/ui/workspace-layout/src/index.ts"
             ],

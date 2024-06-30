@@ -5,9 +5,12 @@ import 'dotenv/config';
 import { authRouter, emailRouter } from '@mobula/router';
 import { corsMiddleware, authMiddleware, httpLogger } from '@mobula/middleware';
 import { LogLevel } from '@mobula/model';
+import { connectDB } from '@mobula/db';
 
 const app = express();
+connectDB();
 
+app.use(express.json());
 app.use('*', corsMiddleware);
 app.use('*', authMiddleware);
 app.use('*', httpLogger(LogLevel.Compact));

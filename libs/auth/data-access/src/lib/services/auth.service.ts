@@ -22,12 +22,13 @@ export class AuthService {
     }
 
     register(userData: IUserRegister): void {
+        console.log('from register: ', userData);
         this.http
-            .post<{ user: IUser }>(this.registerEndpoint, { user: userData })
+            .post<IUser>(this.registerEndpoint, { ...userData })
             .subscribe((res) => {
-                if (res.user && res.user.token) {
-                    localStorage.setItem('token', res.user.token);
-                    this.userSignal.set(res.user);
+                if (res && res.token) {
+                    localStorage.setItem('token', res.token);
+                    this.userSignal.set(res);
                     if (this.redirectUrl) {
                         this.router.navigateByUrl(this.redirectUrl);
                     } else {
@@ -40,7 +41,7 @@ export class AuthService {
 
     login(userData: IUserLogin): void {
         this.http
-            .post<{ user: IUser }>(this.loginEndpoint, { user: userData })
+            .post<{ user: IUser }>(this.loginEndpoint, { ...userData })
             .subscribe({
                 next: (res) => {
                     if (res.user && res.user.token) {
