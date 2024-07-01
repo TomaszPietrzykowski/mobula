@@ -1,19 +1,13 @@
 .desktop_layout__container {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid lightgray;
-  padding: 0.5rem;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 .desktop_layout__top,
 .desktop_layout__bottom {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid lightgray;
-}
-.desktop_layout__top {
-  flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    // border: 1px solid lightgray;
 }

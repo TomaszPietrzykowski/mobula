@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RequestBrowserComponent } from './request-browser.component';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [RequestBrowserComponent],
-  exports: [RequestBrowserComponent],
+    imports: [CommonModule],
+    declarations: [RequestBrowserComponent],
+    exports: [RequestBrowserComponent],
 })
-export class RequestBrowserModule {}
+export class RequestBrowserModule { }

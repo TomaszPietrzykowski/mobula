@@ -1,1 +1,4 @@
 <p>request-browser works!</p>
+<div class="resize-handle-y" [class.resizing-y]="layoutService.resizingEvent.isResizingY"
+    (mousedown)="startResizingY($event)">
+</div>

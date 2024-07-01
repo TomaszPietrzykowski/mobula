@@ -2,10 +2,6 @@
 @import 'elements';
 @import 'mixins';
 
-p {
-    color: $color-red;
-    font-size: $bigf;
-}
 .test {
     @include flex-center;
 }

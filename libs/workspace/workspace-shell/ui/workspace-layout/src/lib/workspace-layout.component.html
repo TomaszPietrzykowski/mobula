@@ -1,11 +1,26 @@
 <div class="workspace-layout__container">
-  <div class="workspace-layout__sidenav">
-    <div>S_N</div>
-  </div>
-  <div class="workspace-layout__folder_browser">
-    <div>browser</div>
-  </div>
-  <div class="workspace-layout__output">
-    <mobula-workspace-output></mobula-workspace-output>
-  </div>
+    <div class="workspace-layout__sidenav">
+        <button (click)="toggleFolderView()">>></button>
+    </div>
+    @if(folderViewVisible) {
+    <div class="workspace-layout__folder_browser">
+        <div>browser</div>
+        <ul>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+            <li>hjgkjhgkjkj</li>
+        </ul>
+        <div class="resize-handle" [class.resizing]="layoutService.resizingEvent.isResizing"
+            (mousedown)="startResizing($event)">
+        </div>
+    </div>
+    }
+    <div class="workspace-layout__output">
+        <mobula-workspace-output></mobula-workspace-output>
+    </div>
 </div>

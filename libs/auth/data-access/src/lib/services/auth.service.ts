@@ -9,12 +9,8 @@ export class AuthService {
     http = inject(HttpClient);
     router = inject(Router);
 
-    loginEndpoint = '/api/auth/login';
-    registerEndpoint = '/api/auth/register';
-    userEndpoint = '/api/auth/user';
-
+    // state
     userSignal = signal<IUser | undefined | null>(undefined);
-
     redirectUrl: string | null = null;
 
     isLoggedIn(): boolean {
@@ -24,7 +20,7 @@ export class AuthService {
     register(userData: IUserRegister): void {
         console.log('from register: ', userData);
         this.http
-            .post<IUser>(this.registerEndpoint, { ...userData })
+            .post<IUser>('/api/auth/register', { ...userData })
             .subscribe((res) => {
                 if (res && res.token) {
                     localStorage.setItem('token', res.token);
@@ -40,7 +36,7 @@ export class AuthService {
     }
 
     login(userData: IUserLogin): void {
-        this.http.post<IUser>(this.loginEndpoint, { ...userData }).subscribe({
+        this.http.post<IUser>('/api/auth/login', { ...userData }).subscribe({
             next: (res) => {
                 if (res && res.token) {
                     localStorage.setItem('token', res.token);
@@ -67,7 +63,7 @@ export class AuthService {
     }
 
     getUser(): void {
-        this.http.get<IUser>(this.userEndpoint).subscribe({
+        this.http.get<IUser>('/api/auth/user').subscribe({
             next: (res) => {
                 this.userSignal.set(res);
                 if (this.redirectUrl) {
