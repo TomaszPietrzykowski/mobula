@@ -1,11 +1,13 @@
+@import 'colors';
+
 :host {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  z-index: 999;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //   background-color: rgb(51, 57, 58);
+    height: var(--footer-height);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-vs-400;
 }

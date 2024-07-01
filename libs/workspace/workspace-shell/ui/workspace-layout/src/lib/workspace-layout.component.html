@@ -1,10 +1,11 @@
 <div class="workspace-layout__container">
     <div class="workspace-layout__sidenav">
-        <button (click)="toggleFolderView()">>></button>
+        <button (click)="toggleFolderView()">
+            @if(folderViewVisible) {<} @else {>}
+        </button>
     </div>
     @if(folderViewVisible) {
     <div class="workspace-layout__folder_browser">
-        <div>browser</div>
         <ul>
             <li>hjgkjhgkjkj</li>
             <li>hjgkjhgkjkj</li>

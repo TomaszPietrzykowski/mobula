@@ -1,17 +1,24 @@
+@import 'colors';
+
 :host {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
-    height: 60px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: steelblue;
+    background-color: $color-vs-300;
+    color: $color-text-white;
+}
+
+h1 {
+    font-size: 1.3rem;
 }
 
 .header__logo--container {
-    padding-inline: 2rem;
+    padding-inline: 1rem;
 }
 .header__nav--container {
     padding-inline: 2rem;
@@ -31,8 +38,19 @@
     align-items: center;
     gap: 1rem;
 }
+
+button {
+    color: $color-text-white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .header__nav-link--active {
     button {
-        color: greenyellow;
+        color: rgb(255, 109, 47);
+        background: none;
+        border: none;
+        cursor: default;
     }
 }

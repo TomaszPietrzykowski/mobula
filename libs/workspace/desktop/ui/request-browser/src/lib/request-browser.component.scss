@@ -1,48 +1,29 @@
 @import 'colors';
+@import 'mixins';
 
 :host {
-    // flex: 1;
-
     position: relative;
-    // height: 100vh;
     height: var(--output-height);
-
-    box-sizing: border-box;
     width: 100%;
-    // makes the sidenav stay in place, even when content is scrollable
-    position: sticky;
-    top: 0;
-    // make width transition smooth when not resizing manually
-    // &:not(.resizing) {
-    //     transition: width 0.6s cubic-bezier(0.02, 0.68, 0.63, 0.98);
-    // }
 }
 .resize-handle-y {
+    @include disable-selection;
+
     width: 100%;
     background-color: $color-drag-handle-passive;
-    height: 2px;
+    height: 1px;
     position: absolute;
     bottom: 0;
     right: 0;
-
     cursor: ns-resize;
 
-    // prevent text selection while dragging
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    transition: background-color 0.2s ease-out;
+    transition: all 0.2s ease-out;
 
     &:hover {
-        height: 5px;
+        height: 4px;
         background-color: $color-drag-handle-active;
     }
 
-    // buffer to make it easier to grab the resize handle
     &::after {
         content: '';
         display: block;
@@ -53,7 +34,6 @@
         z-index: 1;
     }
 
-    // buffer to avoid flickering cursor when resizing
     &.resizing-y::after {
         height: 200px;
         top: -100px;

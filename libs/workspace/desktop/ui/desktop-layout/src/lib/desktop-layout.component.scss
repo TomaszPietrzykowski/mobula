@@ -1,7 +1,10 @@
+@import 'colors';
+
 .desktop_layout__container {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: $color-vs-100;
 }
 .desktop_layout__top,
 .desktop_layout__bottom {
@@ -9,5 +12,4 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    // border: 1px solid lightgray;
 }

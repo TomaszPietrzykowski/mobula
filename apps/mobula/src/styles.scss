@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'colors';
 
 /* 1. Default resets */
 *,
@@ -14,7 +15,12 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    background-color: $color-vs-100;
+    color: $color-text-white;
 
+    /* App layout */
+    --header-height: 50px;
+    --footer-height: 20px;
     /* Workspace layout */
     --sidenav-width: 250px;
     --output-height: 600px;
