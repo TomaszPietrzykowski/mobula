@@ -9,7 +9,8 @@
 .request-browser__content {
     height: 100%;
     overflow-y: scroll;
-    padding: 6rem;
+    opacity: 0.3;
+    padding: 4rem;
 }
 .resize-handle-y {
     @include disable-selection;

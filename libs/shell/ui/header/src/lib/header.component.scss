@@ -48,7 +48,7 @@ button {
 
 .header__nav-link--active {
     button {
-        color: rgb(255, 109, 47);
+        color: $color-nav-link-active;
         background: none;
         border: none;
         cursor: default;
