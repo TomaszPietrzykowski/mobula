@@ -3,8 +3,13 @@
 
 :host {
     position: relative;
-    height: var(--output-height);
+    height: calc(var(--output-height) - 12px);
     width: 100%;
+}
+.request-browser__content {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 6rem;
 }
 .resize-handle-y {
     @include disable-selection;

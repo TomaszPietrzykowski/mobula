@@ -43,3 +43,9 @@ ul {
 html {
     font-family: 'Roboto', sans-serif;
 }
+/* 3. Overrides */
+/* Custom scrollbars: Chrome API from Chrome 121: */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $color-vs-400 $color-vs-300;
+}
