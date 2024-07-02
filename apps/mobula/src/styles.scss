@@ -48,4 +48,7 @@ html {
 * {
     scrollbar-width: thin;
     scrollbar-color: $color-vs-400 $color-vs-300;
+    &:hover {
+        scrollbar-color: #474645 $color-vs-300;
+    }
 }

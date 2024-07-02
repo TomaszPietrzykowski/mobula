@@ -15,14 +15,14 @@
     justify-content: flex-start;
     align-items: center;
 }
-// .desktop_layout__top {
-//     height: var(--output-height);
-// }
 .desktop_layout__bottom {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     overflow-y: scroll;
-    height: calc(100vh - var(--output-height) - var(--footer-height) + 10px);
+    height: calc(
+        100vh - var(--output-height) - var(--header-height) -
+            var(--footer-height) + 10px
+    );
 }
