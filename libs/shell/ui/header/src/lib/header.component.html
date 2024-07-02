@@ -1,6 +1,6 @@
-<div class="header__flex-container">
+<div class="header__flex-container" [class.header__flex-container--home]="router.url === '/'">
     <div class="header__logo--container">
-        <h1>mobula</h1>
+        <div></div>
     </div>
     <div class="header__nav--container">
         <nav class="header__nav">
@@ -9,14 +9,19 @@
             <a routerLink="/workspace" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Workspace</button></a>
             <a routerLink="/contact" routerLinkActive="header__nav-link--active"
+                [routerLinkActiveOptions]="{exact:true}"><button>Docs</button></a>
+            <a routerLink="/contact" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Contact</button></a>
-
-            @if(!authService.userSignal()?.username) {
+        </nav>
+    </div>
+    <div class="header__auth--container">
+        <nav class="header__auth-nav">
+            <!-- @if(!authService.userSignal()?.username) {
             <button>Guest</button>
             }
             @if(authService.userSignal()?.username) {
             <button>{{ authService.userSignal()?.username }}</button>
-            }
+            } -->
             @if(!authService.userSignal()?.username) {
             <a routerLink="/login" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Login</button></a>

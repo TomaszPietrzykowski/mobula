@@ -1,5 +1,7 @@
 <div class="layout-container">
-  <mobula-header></mobula-header>
-  <mobula-main-view></mobula-main-view>
-  <mobula-footer></mobula-footer>
+    <mobula-header></mobula-header>
+    <mobula-main-view></mobula-main-view>
+    @if(router.url !== '/') {
+    <mobula-footer></mobula-footer>
+    }
 </div>

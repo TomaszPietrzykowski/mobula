@@ -1,4 +1,4 @@
-$theme-base: 205;
+$theme-hue: 205;
 /* Typography */
 $color-text-white: hsl(0, 0%, 100%);
 $color-text-primary: hsl(210, 86%, 15%);
@@ -7,14 +7,15 @@ $color-text-primary: hsl(210, 86%, 15%);
 $color-button-light: hsl(334, 82%, 48%);
 
 /* Layout */
-$color-nav-link-active: hsl($theme-base, 96%, 68%);
-$color-drag-handle-active: hsl($theme-base, 78%, 64%);
-$color-drag-handle-passive: hsl($theme-base, 5%, 40%);
+$color-nav-link-active: hsl($theme-hue, 96%, 68%);
+$color-nav-link-hover: hsl($theme-hue, 96%, 82%);
+$color-drag-handle-active: hsl($theme-hue, 78%, 64%);
+$color-drag-handle-passive: hsl($theme-hue, 5%, 40%);
 // $color-drag-handle-active: hsl(212, 78%, 64%);
 
 /* Workspace background */
-$color-bg-100: hsl($theme-base, 35%, 8%);
-$color-bg-200: hsl($theme-base, 25%, 12%);
-$color-bg-300: hsl($theme-base, 20%, 15%);
-$color-bg-400: hsl($theme-base, 15%, 20%);
-$color-bg-500: hsl($theme-base, 15%, 24%);
+$color-bg-100: hsl($theme-hue, 35%, 8%);
+$color-bg-200: hsl($theme-hue, 25%, 12%);
+$color-bg-300: hsl($theme-hue, 20%, 15%);
+$color-bg-400: hsl($theme-hue, 15%, 20%);
+$color-bg-500: hsl($theme-hue, 15%, 24%);

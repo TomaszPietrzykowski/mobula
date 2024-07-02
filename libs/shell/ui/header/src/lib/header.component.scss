@@ -1,5 +1,9 @@
 @import 'colors';
 
+// * {
+//     transition: all 0.3s ease-in-out;
+// }
+
 :host {
     position: fixed;
     width: 100%;
@@ -9,34 +13,77 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-bg-300;
+
     color: $color-text-white;
 }
-
-h1 {
-    font-size: 1.3rem;
-}
-
-.header__logo--container {
-    padding-inline: 1rem;
-}
-.header__nav--container {
-    padding-inline: 2rem;
-}
-.header__flex-container {
+.header__flex-container,
+.header__flex-container--home {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    width: 100%;
+}
+.header__flex-container {
+    background-color: $color-bg-300;
+
+    button {
+        font-size: 0.8rem;
+    }
+
+    .header__logo--container {
+        width: 350px;
+        padding-left: 1rem;
+        div {
+            height: 50px;
+            width: 110px;
+            background-image: url('/assets/logo-01.png');
+            background-size: contain;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+.header__auth--container {
+    padding-inline: 2rem;
+    width: 350px;
+}
+.header__flex-container--home {
+    background-color: #00000000;
+
+    button {
+        font-size: 1.1rem;
+    }
+
+    .header__logo--container {
+        padding-left: 4rem;
+        div {
+            height: 65px;
+            width: 180px;
+        }
+    }
+    .header__auth--container {
+        padding-inline: 4rem;
+    }
+}
+.header__nav--container {
+    padding-inline: 2rem;
 }
 
 .header__nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+}
+.header__auth-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
 }
 
 button {
@@ -44,6 +91,12 @@ button {
     background: none;
     border: none;
     cursor: pointer;
+
+    &:hover {
+        color: $color-nav-link-hover;
+    }
+
+    transition: color 0.2s ease-out;
 }
 
 .header__nav-link--active {
