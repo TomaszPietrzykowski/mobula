@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import 'colors';
 
-/* 1. Default resets */
+/* Default resets */
 *,
 *::before,
 *::after {
@@ -39,12 +39,12 @@ ul {
     list-style: none;
 }
 
-/* 2. Typography */
+/* Typography */
 html,
 button {
     font-family: 'Poppins', sans-serif;
 }
-/* 3. Overrides */
+/* Overrides */
 /* Custom scrollbars: Chrome API from Chrome 121: */
 * {
     scrollbar-width: thin;
@@ -52,4 +52,35 @@ button {
     &:hover {
         scrollbar-color: #474645 $color-bg-300;
     }
+}
+/* Router transitions */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-from-right {
+    from {
+        transform: translateX(30px);
+    }
+}
+
+@keyframes slide-to-left {
+    to {
+        transform: translateX(-30px);
+    }
+}
+
+::view-transition-new(root) {
+    animation: 225ms cubic-bezier(0, 0, 0.2, 1) 225ms both fade-in;
+}
+::view-transition-old(root) {
+    animation: 225ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
 }

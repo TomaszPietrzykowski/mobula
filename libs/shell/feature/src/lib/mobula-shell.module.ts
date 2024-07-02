@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 import { appShellRoutes } from './lib.routes';
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(appShellRoutes)],
-  exports: [RouterModule],
+    imports: [CommonModule],
+    providers: [provideRouter(appShellRoutes, withViewTransitions())],
 })
-export class MobulaShellModule {}
+export class MobulaShellModule { }
