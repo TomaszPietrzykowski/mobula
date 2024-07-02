@@ -10,7 +10,7 @@
     height: stretch;
 }
 .workspace-layout__sidenav {
-    background-color: $color-vs-300;
+    background-color: $color-bg-300;
     min-width: 40px;
 
     button {
@@ -34,7 +34,7 @@
 .workspace-layout__folder_browser {
     position: relative;
     width: var(--sidenav-width);
-    background-color: $color-vs-200;
+    background-color: $color-bg-200;
     color: $color-text-white;
     font-size: 0.8rem;
     // makes the sidenav stay in place, even when content is scrollable

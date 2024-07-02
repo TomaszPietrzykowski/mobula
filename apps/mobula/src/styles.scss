@@ -15,11 +15,11 @@ body {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    background-color: $color-vs-100;
+    background-color: $color-bg-100;
     color: $color-text-white;
 
     /* App layout */
-    --header-height: 80px;
+    --header-height: 50px;
     --footer-height: 20px;
     /* Workspace layout */
     --sidenav-width: 250px;
@@ -47,8 +47,8 @@ html {
 /* Custom scrollbars: Chrome API from Chrome 121: */
 * {
     scrollbar-width: thin;
-    scrollbar-color: $color-vs-400 $color-vs-300;
+    scrollbar-color: $color-bg-400 $color-bg-300;
     &:hover {
-        scrollbar-color: #474645 $color-vs-300;
+        scrollbar-color: #474645 $color-bg-300;
     }
 }
