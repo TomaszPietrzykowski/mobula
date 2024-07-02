@@ -8,9 +8,12 @@
 }
 .request-browser__content {
     height: 100%;
+    width: 100%;
     overflow-y: scroll;
-    opacity: 0.3;
     padding: 4rem;
+    & > * {
+        opacity: 0.3;
+    }
 }
 .resize-handle-y {
     @include disable-selection;
