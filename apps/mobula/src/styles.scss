@@ -21,6 +21,7 @@ body {
     /* App layout */
     --header-height: 50px;
     --footer-height: 20px;
+
     /* Workspace layout */
     --sidenav-width: 250px;
     --output-height: 600px;
@@ -54,6 +55,9 @@ button {
     }
 }
 /* Router transitions */
+* {
+    --pageTransitionTime: 200ms;
+}
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -79,8 +83,10 @@ button {
 }
 
 ::view-transition-new(root) {
-    animation: 225ms cubic-bezier(0, 0, 0.2, 1) 225ms both fade-in;
+    animation: var(--pageTransitionTime) cubic-bezier(0, 0, 0.2, 1)
+        var(--pageTransitionTime) both fade-in;
 }
 ::view-transition-old(root) {
-    animation: 225ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+    animation: var(--pageTransitionTime) cubic-bezier(0.4, 0, 1, 1) both
+        fade-out;
 }

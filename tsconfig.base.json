@@ -20,9 +20,6 @@
             "@mobula/auth/data-access": ["libs/auth/data-access/src/index.ts"],
             "@mobula/contact": ["libs/contact/feature/src/index.ts"],
             "@mobula/controller": ["libs/api/controller/src/index.ts"],
-            "@mobula/workspace/data-access": [
-                "libs/workspace/data-access/src/index.ts"
-            ],
             "@mobula/db": ["libs/api/db/src/index.ts"],
             "@mobula/db-model": ["libs/api/db-model/src/index.ts"],
             "@mobula/desktop": ["libs/workspace/desktop/feature/src/index.ts"],
@@ -55,6 +52,9 @@
             ],
             "@mobula/router": ["libs/api/router/src/index.ts"],
             "@mobula/styles": ["libs/shared/ui/styles/src/index.ts"],
+            "@mobula/ui-components": [
+                "libs/shared/ui/ui-components/src/index.ts"
+            ],
             "@mobula/user/profile": ["libs/user/feature/src/index.ts"],
             "@mobula/utils": ["libs/api/utils/src/index.ts"],
             "@mobula/workspace-layout": [
@@ -65,6 +65,9 @@
             ],
             "@mobula/workspace-shell": [
                 "libs/workspace/workspace-shell/feature/src/index.ts"
+            ],
+            "@mobula/workspace/data-access": [
+                "libs/workspace/data-access/src/index.ts"
             ]
         }
     },

@@ -1,7 +1,7 @@
 @import 'colors';
 
 * {
-    transition: all 0.3s ease-in;
+    transition: all var(pageTransitionTime) ease-in;
 }
 
 :host {
@@ -96,7 +96,7 @@ button {
         color: $color-nav-link-hover;
     }
 
-    transition: color 0.2s ease-out;
+    transition: color var(--pageTransitionTime) ease-out;
 }
 
 .header__nav-link--active {
