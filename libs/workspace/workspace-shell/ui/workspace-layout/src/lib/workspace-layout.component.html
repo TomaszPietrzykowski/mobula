@@ -20,11 +20,17 @@
             <mobula-icon [size]="28" [color]="activeSideNavTabIndex === 3 ? '#5fbafc' : '#ffffff'"
                 icon="clock"></mobula-icon>
         </button>
+        <button (click)="handleSidebarClick(4)" class="workspace-layout__sidenav-button"
+            [class.active-button]="activeSideNavTabIndex === 4">
+            <mobula-icon [size]="28" [color]="activeSideNavTabIndex === 4 ? '#5fbafc' : '#ffffff'"
+                icon="chart-1"></mobula-icon>
+        </button>
     </div>
     @if(folderViewVisible) {
     <div class="workspace-layout__folder_browser">
         <div class="work-in-progress">
             <h1>{{activeSideNavTabIndex + 1}}</h1>
+            <h4>{{ labels[activeSideNavTabIndex]}}</h4>
         </div>
         <div class="resize-handle" [class.resizing]="layoutService.resizingEvent.isResizing"
             (mousedown)="startResizing($event)">

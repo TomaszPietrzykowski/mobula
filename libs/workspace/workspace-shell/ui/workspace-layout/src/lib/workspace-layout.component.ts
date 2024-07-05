@@ -8,7 +8,8 @@ import { WorkspaceLayoutService } from '@mobula/workspace/data-access';
 })
 export class WorkspaceLayoutComponent {
     folderViewVisible = true;
-    activeSideNavTabIndex: 0 | 1 | 2 | 3 = 0;
+    activeSideNavTabIndex: 0 | 1 | 2 | 3 | 4 = 0;
+    labels = ["collections", "environment", "tests", "logs", "statistics"]
 
     constructor(public layoutService: WorkspaceLayoutService) { }
 
@@ -44,7 +45,7 @@ export class WorkspaceLayoutComponent {
         this.layoutService.resizingEvent.isResizing = false;
     }
 
-    handleSidebarClick(tabIndex: 0 | 1 | 2 | 3) {
+    handleSidebarClick(tabIndex: 0 | 1 | 2 | 3 | 4) {
         if (!this.folderViewVisible) {
             this.folderViewVisible = true;
             this.activeSideNavTabIndex = tabIndex;
