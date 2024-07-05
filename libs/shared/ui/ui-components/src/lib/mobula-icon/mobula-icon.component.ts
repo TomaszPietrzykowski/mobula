@@ -6,7 +6,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     selector: 'mobula-icon',
     standalone: true,
     imports: [CommonModule],
-    template: `<div [innerHTML]="safeSvgIcon"></div>`,
+    template: `<div style="display: flex; align-items: center;" [innerHTML]="safeSvgIcon"></div>`,
     styleUrl: './mobula-icon.component.scss',
 })
 export class MobulaIconComponent implements OnChanges {
@@ -47,6 +47,37 @@ export class MobulaIconComponent implements OnChanges {
                         <line x1="12" y1="9.5" x2="12" y2="15" fill="none" stroke="${this.color}"/>
                         <line x1="12" y1="17.5" x2="12" y2="16.5" fill="none" stroke="${this.color}"/>
                         <polygon points="12 3 22 20 2 20 12 3" fill="none" stroke="${this.color}"/></svg>`;
+
+            case 'cast':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                        <path d="M6,19.5a4.2,4.2,0,0,0-4-4.4" fill="none" stroke="${this.color}"/>
+                        <path d="M9.1,19.5A7.3,7.3,0,0,0,2,12" fill="none" stroke="${this.color}"/>
+                        <line x1="3" y1="19" x2="2" y2="19" fill="none" stroke="${this.color}"/>
+                        <polyline points="2.5 9.5 2.5 5 21.5 5 21.5 19 11.5 19" fill="none" stroke="${this.color}" stroke-miterlimit="10"/></svg>`;
+
+            case 'cd':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="${this.color}"/>
+                        <rect x="10" y="10" width="4" height="4" rx="2" fill="none" stroke="${this.color}" stroke-miterlimit="10"/></svg>`;
+
+            case 'chat-heart':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                <path d="M6.1,18.76A8.18,8.18,0,0,1,2,11.89c0-4.7,4.47-8.51,10-8.51s10,3.81,10,8.51-4.48,8.5-10,8.5a11.67,11.67,0,0,1-1.89-.15L5.66,22.49Z" fill="none" stroke="${this.color}"/>
+                <path d="M12,10.75l-.44-.39a1.5,1.5,0,0,0-2.12,2.12L12,15.08l2.56-2.6a1.5,1.5,0,0,0-2.12-2.12Z" fill="none" stroke="${this.color}"/></svg>`;
+
+            case 'chat':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                <path d="M6,18.28a8.19,8.19,0,0,1-4-6.94C2.08,6.64,6.62,2.91,12.14,3S22.07,7,22,11.66,17.38,20.09,11.86,20A11.63,11.63,0,0,1,10,19.82L5.5,22Z" fill="none" stroke="${this.color}"/></svg>`;
+
+            case 'check':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                <polyline points="4 11.5 10 17.5 21 6.5" fill="none" stroke="${this.color}" stroke-miterlimit="10"/></svg>`;
+
+            case 'chart-1':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                        <rect x="2" y="13" width="4" height="8" fill="none" stroke="${this.color}" stroke-miterlimit="10"/>
+                        <rect x="10" y="3" width="4" height="18" fill="none" stroke="${this.color}" stroke-miterlimit="10"/>
+                        <rect x="18" y="8" width="4" height="13" fill="none" stroke="${this.color}" stroke-miterlimit="10"/></svg>`;
 
             case 'folder':
                 return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
@@ -115,6 +146,11 @@ export class MobulaIconComponent implements OnChanges {
                 return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
                         <polyline points="11.5 6 11.5 12.5 16.5 15" fill="none" stroke="${this.color}"/>
                         <circle cx="12" cy="12" r="10" fill="none" stroke="${this.color}"/></svg>`;
+
+            case 'user':
+                return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">
+                <circle cx="12" cy="7.5" r="4" fill="none" stroke="${this.color}"/>
+                <polyline points="4.5 21 4.5 17 7.5 14 12 15.5 16.5 14 19.5 17 19.5 21" fill="none" stroke="${this.color}"/></svg>`;
 
             default:
                 return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${this.size}" height="${this.size}">

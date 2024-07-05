@@ -8,6 +8,7 @@ import { WorkspaceLayoutService } from '@mobula/workspace/data-access';
 })
 export class WorkspaceLayoutComponent {
     folderViewVisible = true;
+    activeSideNavTabIndex: 0 | 1 | 2 | 3 = 0;
 
     constructor(public layoutService: WorkspaceLayoutService) { }
 
@@ -43,7 +44,14 @@ export class WorkspaceLayoutComponent {
         this.layoutService.resizingEvent.isResizing = false;
     }
 
-    toggleFolderView() {
-        this.folderViewVisible = !this.folderViewVisible;
+    handleSidebarClick(tabIndex: 0 | 1 | 2 | 3) {
+        if (!this.folderViewVisible) {
+            this.folderViewVisible = true;
+            this.activeSideNavTabIndex = tabIndex;
+        } else if (tabIndex === this.activeSideNavTabIndex && this.folderViewVisible) {
+            this.folderViewVisible = false;
+        } else if (tabIndex !== this.activeSideNavTabIndex && this.folderViewVisible) {
+            this.activeSideNavTabIndex = tabIndex;
+        }
     }
-}
+}   

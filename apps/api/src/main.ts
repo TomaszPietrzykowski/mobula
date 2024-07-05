@@ -31,4 +31,6 @@ const server = app.listen(port, () => {
         `\x1b[38;5;83mServer listening at \x1b[38;5;214mlocalhost:${port}/api\n\x1b[38;5;83mHappy hacking!!!\n\x1b[0m`
     );
 });
+
+// const server = app.listen();
 server.on('error', console.error);
