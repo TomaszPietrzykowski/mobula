@@ -8,7 +8,7 @@
                 [routerLinkActiveOptions]="{exact:true}"><button>Home</button></a>
             <a routerLink="/workspace" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Workspace</button></a>
-            <a routerLink="/contact" routerLinkActive="header__nav-link--active"
+            <a routerLink="/docs" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Docs</button></a>
             <a routerLink="/contact" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Contact</button></a>
@@ -16,12 +16,6 @@
     </div>
     <div class="header__auth--container">
         <nav class="header__auth-nav">
-            <!-- @if(!authService.userSignal()?.username) {
-            <button>Guest</button>
-            }
-            @if(authService.userSignal()?.username) {
-            <button>{{ authService.userSignal()?.username }}</button>
-            } -->
             @if(!authService.userSignal()?.username) {
             <a routerLink="/login" routerLinkActive="header__nav-link--active"
                 [routerLinkActiveOptions]="{exact:true}"><button>Login</button></a>

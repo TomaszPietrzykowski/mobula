@@ -12,6 +12,7 @@
 .workspace-layout__sidenav {
     background-color: $color-bg-300;
     min-width: 50px;
+    position: relative;
 
     button {
         background: none;

@@ -26,6 +26,7 @@
             "@mobula/desktop-layout": [
                 "libs/workspace/desktop/ui/desktop-layout/src/index.ts"
             ],
+            "@mobula/docs": ["libs/docs/feature/src/index.ts"],
             "@mobula/environment": [
                 "libs/shared/data-access/environment/src/index.ts"
             ],

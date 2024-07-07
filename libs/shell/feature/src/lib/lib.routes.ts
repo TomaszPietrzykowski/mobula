@@ -20,6 +20,11 @@ export const appShellRoutes: Route[] = [
                         .WorkspaceShellModule,
             },
             {
+                path: 'docs',
+                loadComponent: async () =>
+                    (await import('@mobula/docs')).DocsComponent,
+            },
+            {
                 path: 'contact',
                 loadChildren: async () =>
                     (await import('@mobula/contact')).ContactModule,
