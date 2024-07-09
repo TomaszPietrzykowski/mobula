@@ -1,4 +1,4 @@
-<h1 style="padding: 5rem 5rem 3rem;">Profile</h1>
+<h1 style="padding: 5rem 5rem 3rem;">Profile {{ auth.userSignal()?.username | titlecase }}</h1>
 <div style="padding: 0 5rem; display: flex; gap: 0.5rem;">
     <mobula-icon [size]="32" color="#ff0000" icon="airplay"></mobula-icon>
     <mobula-icon [size]="32" color="#ffaa00" icon="alert"></mobula-icon>

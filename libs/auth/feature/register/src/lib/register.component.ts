@@ -20,13 +20,13 @@ export class RegisterComponent {
     passwordConfirmError: string | null = null;
 
     registerForm = this.fb.nonNullable.group({
-        username: ['', Validators.required, Validators.email],
+        username: ['', Validators.required],
         email: ['', Validators.required, Validators.email],
         password: ['', [Validators.required]],
         passwordConfirm: ['', [Validators.required]],
     });
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService) { }
 
     submitRegister(e: Event) {
         e.preventDefault();

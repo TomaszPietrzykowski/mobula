@@ -1,10 +1,14 @@
 import { Component, HostBinding, HostListener } from '@angular/core';
 import { WorkspaceLayoutService } from '@mobula/workspace/data-access';
+import { WorkspaceOutputComponent } from '../../../workspace-output/src/lib/workspace-output.component';
+import { MobulaIconComponent } from '../../../../../../shared/ui/ui-components/src/lib/mobula-icon/mobula-icon.component';
 
 @Component({
     selector: 'mobula-workspace-layout',
     templateUrl: './workspace-layout.component.html',
     styleUrl: './workspace-layout.component.scss',
+    standalone: true,
+    imports: [MobulaIconComponent, WorkspaceOutputComponent],
 })
 export class WorkspaceLayoutComponent {
     folderViewVisible = true;

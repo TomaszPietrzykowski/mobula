@@ -1,11 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '@mobula/auth/data-access';
 
 @Component({
     selector: 'mobula-header',
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
+    standalone: true,
+    imports: [RouterLink, RouterLinkActive],
 })
 export class HeaderComponent implements OnInit {
     authService = inject(AuthService);
