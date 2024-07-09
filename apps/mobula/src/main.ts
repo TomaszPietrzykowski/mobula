@@ -7,10 +7,11 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { environment } from './environments/environment';
 import { MOBULA_ENV } from '@mobula/environment';
 import { GlobalErrorHandler } from '@mobula/global-error-handler';
-import { ErrorHandler, importProvidersFrom } from '@angular/core';
+import { ErrorHandler, importProvidersFrom, provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
     providers: [
+        provideExperimentalZonelessChangeDetection(),
         importProvidersFrom(BrowserModule, RouterModule, MobulaShellModule),
         { provide: ErrorHandler, useClass: GlobalErrorHandler },
         { provide: MOBULA_ENV, useValue: environment },
