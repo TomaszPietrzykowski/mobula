@@ -13,7 +13,7 @@
                 "outputPath": "dist/apps/mobula",
                 "index": "apps/mobula/src/index.html",
                 "main": "apps/mobula/src/main.ts",
-                "polyfills": ["zone.js"],
+                "polyfills": [],
                 "tsConfig": "apps/mobula/tsconfig.app.json",
                 "inlineStyleLanguage": "scss",
                 "assets": [
