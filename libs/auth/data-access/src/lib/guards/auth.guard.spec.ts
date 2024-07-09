@@ -1,16 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-
 import { AuthGuard } from './auth.guard';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('AuthGuard', () => {
-  let guard: AuthGuard;
+    let guard: AuthGuard;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    guard = TestBed.inject(AuthGuard);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers: [provideHttpClient(), provideHttpClientTesting()]
+        });
+        guard = TestBed.inject(AuthGuard);
+    });
 
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(guard).toBeTruthy();
+    });
 });

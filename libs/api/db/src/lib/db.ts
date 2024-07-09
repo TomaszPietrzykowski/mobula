@@ -6,7 +6,7 @@ export const connectDB = async () => {
             (process.env.DB_URI as string).replace(
                 '<PASSWORD>',
                 process.env.DB_PASSWORD as string
-            )
+            ), {}
         );
         console.log(`MongoDB connected\nDB name: ${conn.connection.name}`);
         mongoose.connection.on('connected', () =>
@@ -23,6 +23,7 @@ export const connectDB = async () => {
             console.log('mongoose disconnecting')
         );
         mongoose.connection.on('close', () => console.log('mongoose close'));
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
         console.log(`Error: ${err.message}`);
         process.exit(1);

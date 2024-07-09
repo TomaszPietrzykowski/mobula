@@ -5,6 +5,7 @@ import { WorkspaceLayoutService } from '@mobula/workspace/data-access';
     selector: 'mobula-request-browser',
     templateUrl: './request-browser.component.html',
     styleUrl: './request-browser.component.scss',
+    standalone: true,
 })
 export class RequestBrowserComponent {
     layoutService = inject(WorkspaceLayoutService);

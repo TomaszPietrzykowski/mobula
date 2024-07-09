@@ -1,14 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { provideHttpClient } from '@angular/common/http';
+import { /* HttpTestingController,*/ provideHttpClientTesting } from '@angular/common/http/testing';
 describe('AppComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [RouterTestingModule],
-            declarations: [AppComponent],
+            imports: [RouterTestingModule, AppComponent],
+            providers: [provideHttpClient(), provideHttpClientTesting()]
         }).compileComponents();
+        // const httpTesting = TestBed.inject(HttpTestingController);
+        // TODO: https://angular.dev/guide/http/testing#setup-for-testing
     });
+
 
     it(`should have as title 'mobula'`, () => {
         const fixture = TestBed.createComponent(AppComponent);

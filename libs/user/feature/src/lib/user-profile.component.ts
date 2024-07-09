@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MobulaIconComponent } from '@mobula/ui-components';
+import { AuthService } from '@mobula/auth/data-access';
 
 @Component({
     selector: 'user-profile',
@@ -9,4 +10,6 @@ import { MobulaIconComponent } from '@mobula/ui-components';
     templateUrl: './user-profile.component.html',
     styleUrl: './user-profile.component.scss',
 })
-export class UserProfileComponent { }
+export class UserProfileComponent {
+    auth = inject(AuthService);
+}
