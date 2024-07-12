@@ -6,12 +6,12 @@
         <form class="auth__form" [formGroup]="loginForm" (ngSubmit)="submitLogin($event)">
             <div class="auth__input">
                 <label for="email">Email</label>
-                <input type="text" formControlName="email" id="email">
+                <input type="text" formControlName="email" id="email" data-test="email">
                 <div class="auth__input--error">{{ emailError }}</div>
             </div>
             <div class="auth__input">
                 <label for="password">Password</label>
-                <input type="password" formControlName="password" id="password">
+                <input type="password" formControlName="password" id="password" data-test="password">
                 <div class="auth__input--error">{{ passwordError }}</div>
             </div>
 
