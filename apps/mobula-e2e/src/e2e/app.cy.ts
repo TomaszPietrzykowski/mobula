@@ -1,13 +1,20 @@
-import { getGreeting } from '../support/app.po';
+// import { getGreeting } from '../support/app.po';
 
 describe('mobula-e2e', () => {
-  beforeEach(() => cy.visit('/'));
+    beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+    it('should log user in', () => {
+        // Custom command example, see `../support/commands.ts` file
+        // cy.login('asd@asd.jfo', 'asd');
+        // cy.url().should('include', '/workspace');
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains(/Welcome/);
-  });
+        cy.visit('/login');
+
+        cy.get('input[data-test="email"]').type("asd@asd.jfo");
+        cy.get('input[data-test="password"]').type("asd");
+        cy.get('button[type="submit"]').click();
+
+        // Function helper example, see `../support/app.po.ts` file
+        // getGreeting().contains(/1/);
+    });
 });

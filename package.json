@@ -4,11 +4,14 @@
     "license": "MIT",
     "scripts": {
         "test": "nx run-many -t test --all",
+        "unit-tests": "nx run-many -t test --all",
+        "e2e-tests": "nx run-many -t e2e --all",
         "dev": "concurrently --prefix \"none\" \"nx serve\" \"nx serve api\"",
         "prebuild": "node prebuild.js",
         "build": "concurrently --prefix \"none\" \"nx build mobula\" \"nx build api\"",
         "postbuild": "node postbuild.js",
-        "mydevil": "npm run build && node mydevil.pipeline.js"
+        "mydevil": "npm run build && node mydevil.pipeline.js",
+        "deploy": "npm run unit-tests && npm run e2e-tests && npm run build && node mydevil.pipeline.js || node deployment-failed.js"
     },
     "private": true,
     "dependencies": {
